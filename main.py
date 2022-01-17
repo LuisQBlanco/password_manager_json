@@ -44,9 +44,12 @@ def save():
         #                                               f"\nPassword: {password} \nIs it ok to save?")
 
         # if is_ok:
-        with open("data.json", "w") as data_file:
+        with open("data.json", "r") as data_file:
             # data_file.write(f"{website} | {email} | {password}\n")
-            json.dump(new_data, data_file, indent=4)
+            # json.dump(new_data, data_file, indent=4)
+            data = json.load(data_file)
+            print(data)
+            print(type(data))
             website_entry.delete(0, END)
             password_entry.delete(0, END)
 
