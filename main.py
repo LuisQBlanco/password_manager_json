@@ -49,13 +49,10 @@ def save():
             data = json.load(data_file)
             # Updating old data with new data
             data.update(new_data)
-            print(data)
-            print(type(data))
 
         with open("data.json", "w") as data_file:
             # Saving update data
             json.dump(data, data_file, indent=4)
-
 
             website_entry.delete(0, END)
             password_entry.delete(0, END)
